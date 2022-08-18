@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateUsers1658012744623 implements MigrationInterface {
