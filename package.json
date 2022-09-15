@@ -20,12 +20,12 @@
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.3.0",
     "tsyringe": "^4.7.0",
-    "typeorm": "0.2.45",
+    "typeorm": "^0.3.9",
     "uuid": "^8.3.2"
   },
   "scripts": {
     "dev": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/infra/typeorm/index.ts"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js -d src/shared/infra/typeorm/data-source.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

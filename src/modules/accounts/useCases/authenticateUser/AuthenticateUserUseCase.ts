@@ -30,8 +30,12 @@ class AuthenticateUserUseCase {
 
   async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.usersRepository.findByEmail(email);
-    const { expires_in_token,secret_token,
-    secret_refresh_token, expires_in_refresh_token} = auth;
+    const {
+      expires_in_token,
+      secret_token,
+      secret_refresh_token,
+      expires_in_refresh_token,
+    } = auth;
 
     if (!user) {
       throw new AppError("Email or password incorrect");
@@ -48,7 +52,7 @@ class AuthenticateUserUseCase {
 
     const refresh_token = sign({ email }, secret_refresh_token, {
       subject: user.id,
-      expiresIn: expires_in_refresh_token
+      expiresIn: expires_in_refresh_token,
     });
 
     await this.usersTokensRepository.create({
