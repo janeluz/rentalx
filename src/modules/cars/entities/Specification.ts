@@ -1,10 +1,15 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { v4 as uuidv4 } from "uuid";
 
 @Entity("specifications")
 class Specification {
   // classe especificações com nome descrição e data
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn("uuid")
   id?: string;
   @Column() // se tiver um nove diferente é so colocar ali entre parenteses
   name: string;

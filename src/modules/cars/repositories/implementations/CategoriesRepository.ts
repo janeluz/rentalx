@@ -1,5 +1,6 @@
-import { getRepository, Repository } from "typeorm";
+import { Repository } from "typeorm";
 
+import dataSource from "../../../../database/data-source";
 import { Category } from "../../entities/Category";
 import {
   ICategoriesRepository,
@@ -12,7 +13,7 @@ class CategoriesRepository implements ICategoriesRepository {
   // private static INSTANCE: CategoriesRepository;
 
   constructor() {
-    this.repository = getRepository(Category);
+    this.repository = dataSource.getRepository(Category); /***/
   }
 
   // public static getInstance(): CategoriesRepository {

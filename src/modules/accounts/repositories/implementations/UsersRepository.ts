@@ -1,15 +1,14 @@
-import { getRepository, Repository } from "typeorm";
-import AppDataSource from "../../../../shared/data-source";
+import { Repository } from "typeorm";
 
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { dataSource } from "../../../../database/data-source";
 import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepository";
+import { ICreateUserDTO, IUsersRepository } from "../IUsersRepository";
 
 class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;
 
   constructor() {
-    this.repository = AppDataSource.getRepository(User);
+    this.repository = dataSource.getRepository(User);
   }
 
   async create({
@@ -31,8 +30,12 @@ class UsersRepository implements IUsersRepository {
     const user = await this.repository.findOneBy({ email });
     return user;
   }
-  async findById(id: string): Promise<User> {
-    const user = await this.repository.findOneBy({ id });
+  async findById(user_id: string): Promise<User> {
+    const user = await this.repository.findOne({
+      where: {
+        id: user_id,
+      },
+    });
     return user;
   }
 }
