@@ -58,8 +58,9 @@ class AuthenticateUserUseCase {
     await this.usersTokensRepository.create({
       user_id: user.id,
       refresh_token: refresh_token,
-      expires_date:
-  });
+      expires_date: ,
+    });
+
     const tokenReturn: IResponse = {
       token,
       user: {

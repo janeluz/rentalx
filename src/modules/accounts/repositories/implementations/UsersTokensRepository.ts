@@ -1,6 +1,6 @@
 import { Repository } from "typeorm";
 
-import dataSource from "../../../../database/data-source";
+import { dataSource } from "../../../../database/data-source";
 import { ICreateUserTokenDto } from "../../dtos/ICreateUserTokenDTO";
 import { UserTokens } from "../../entities/UsersToken";
 import { IUsersTokensRepository } from "../IUsersTokensRepository";
