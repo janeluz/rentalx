@@ -2,7 +2,7 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 import { Table } from 'typeorm/schema-builder/table/Table';
 
-export class CreateCategories1658090323925 implements MigrationInterface {
+export class CreateCategories implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         // Criamos nossa tabela
         await queryRunner.createTable(

@@ -1,5 +1,5 @@
-import { ICreateUserTokenDto } from "../dtos/ICreateUserTokenDTO";
-import { UserTokens } from "../entities/UsersToken";
+import { ICreateUserTokenDto } from '../dtos/ICreateUserTokenDTO';
+import { UserTokens } from '../entities/UsersToken';
 
 interface IUsersTokensRepository {
   create({

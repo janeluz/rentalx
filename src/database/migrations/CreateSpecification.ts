@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreateSpecification1649000056992 implements MigrationInterface {
+export class CreateSpecification implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(

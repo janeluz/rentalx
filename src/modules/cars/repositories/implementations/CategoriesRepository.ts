@@ -1,11 +1,11 @@
-import { Repository } from "typeorm";
+import { Repository } from 'typeorm';
 
-import dataSource from "../../../../database/data-source";
-import { Category } from "../../entities/Category";
+import { dataSource } from '../../../../database/data-source';
+import { Category } from '../../entities/Category';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../ICategoriesRepository";
+} from '../ICategoriesRepository';
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
@@ -35,7 +35,7 @@ class CategoriesRepository implements ICategoriesRepository {
     return categories;
   }
   async findByName(name: string): Promise<Category> {
-    // select * from categories where = "name" limit 1
+    // select * from categories where = 'name' limit 1
     const category = await this.repository.findOneBy({ name });
     return category;
   }

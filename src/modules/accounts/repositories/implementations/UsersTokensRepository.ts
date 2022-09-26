@@ -1,9 +1,9 @@
-import { Repository } from "typeorm";
+import { Repository } from 'typeorm';
 
-import { dataSource } from "../../../../database/data-source";
-import { ICreateUserTokenDto } from "../../dtos/ICreateUserTokenDTO";
-import { UserTokens } from "../../entities/UsersToken";
-import { IUsersTokensRepository } from "../IUsersTokensRepository";
+import { dataSource } from '../../../../database/data-source';
+import { ICreateUserTokenDto } from '../../dtos/ICreateUserTokenDTO';
+import { UserTokens } from '../../entities/UsersToken';
+import { IUsersTokensRepository } from '../IUsersTokensRepository';
 
 class UsersTokensRepository implements IUsersTokensRepository {
   private repository: Repository<UserTokens>;

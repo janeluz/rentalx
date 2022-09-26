@@ -3,18 +3,20 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-} from "typeorm";
-import { v4 as uuidv4 } from "uuid";
+} from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
-@Entity("specifications")
+@Entity('specifications')
 class Specification {
   // classe especificações com nome descrição e data
-  @PrimaryGeneratedColumn("uuid")
-  id?: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
   @Column() // se tiver um nove diferente é so colocar ali entre parenteses
   name: string;
+
   @Column()
   description: string;
+
   @CreateDateColumn()
   created_at: Date;
 

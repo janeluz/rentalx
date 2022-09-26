@@ -1,17 +1,17 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-import { authenticateRoutes } from "./authenticate.routes";
-import { categoriesRoutes } from "./categories.routes";
-import { specificationsRoutes } from "./Specifications.routes";
-import { usersRoutes } from "./users.routes";
+import { authenticateRoutes } from './authenticate.routes';
+import { categoriesRoutes } from './categories.routes';
+import { specificationsRoutes } from './Specifications.routes';
+import { usersRoutes } from './users.routes';
 
 const router = Router();
 
-router.use("/categories", categoriesRoutes);
+router.use('/categories', categoriesRoutes);
 
-router.use("/specifications", specificationsRoutes);
+router.use('/specifications', specificationsRoutes);
 
-router.use("/users", usersRoutes);
+router.use('/users', usersRoutes);
 
 router.use(authenticateRoutes);
 
