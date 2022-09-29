@@ -12,7 +12,6 @@ class CreateUserController {
 
     await createUserUseCase.excute({
       name,
-      username,
       email,
       isAdmin,
       password,

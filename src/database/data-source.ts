@@ -20,7 +20,9 @@ export const dataSource = new DataSource({
 
 dataSource
   .initialize()
-  .then(async () => {
-    console.log(' Initializing the database...');
+  .then(() => {
+    console.log('Data Source has been initialized!');
   })
-  .catch(err => console.log(err));
+  .catch(err => {
+    console.error('Error during Data Source initialization', err);
+  });
