@@ -4,7 +4,6 @@ import { inject, injectable } from 'tsyringe';
 
 import auth from '../../../../config/auth';
 import { AppError } from '../../../../errors/AppError';
-import { UsersRepository } from '../../repositories/implementations/UsersRepository';
 import { IUsersRepository } from '../../repositories/IUsersRepository';
 // import { IUsersTokensRepository } from '../../repositories/IUsersTokensRepository';
 

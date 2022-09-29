@@ -21,7 +21,7 @@ class User {
   @Column()
   isAdmin: boolean;
 
-  @Column()
+  @Column('varchar', { nullable: true })
   avatar: string;
 
   @CreateDateColumn()

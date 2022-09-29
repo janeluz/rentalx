@@ -1,6 +1,6 @@
 FROM node
 
-WORKDIR /var/rentalx
+WORKDIR /usr/app
 
 COPY package.json ./
 
