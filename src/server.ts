@@ -3,9 +3,9 @@ import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
 
 import './database/data-source';
-import './shared/container';
+import '@shared/container';
 import swaggerDocument from '../swagger.json';
-import { AppError } from './errors/AppError';
+import { AppError } from '@errors/AppError';
 import { router } from './routes';
 
 const app = express();
