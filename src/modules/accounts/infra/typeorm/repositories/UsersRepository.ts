@@ -1,7 +1,6 @@
 import { ICreateUserDTO, IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
-import { Repository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm';
 
-import { dataSource } from '../../../../../shared/infra/typeorm/data-source';
 import { User } from '../entities/User';
 
 
@@ -9,7 +8,7 @@ class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;
 
   constructor() {
-    this.repository = dataSource.getRepository(User);
+    this.repository = getRepository(User);
   }
 
   async create({
@@ -35,12 +34,12 @@ class UsersRepository implements IUsersRepository {
   }
 
   async findByEmail(email: string): Promise<User> {
-    const user = await this.repository.findOneBy({ email });
+    const user = await this.repository.findOne({ email });
     return user;
   }
 
   async findById(id: string): Promise<User> {
-    const user = await this.repository.findOneBy({ id });
+    const user = await this.repository.findOne({ id });
     return user;
   }
 }

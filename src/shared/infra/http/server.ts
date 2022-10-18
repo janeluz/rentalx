@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
@@ -7,6 +8,7 @@ import '@shared/container';
 import swaggerDocument from '../../../../swagger.json';
 import { AppError } from '@shared/errors/AppError';
 import { router } from './routes';
+import { createConnection } from 'typeorm';
 
 const app = express();
 
@@ -30,5 +32,6 @@ app.use(
     });
   },
 );
+
 
 app.listen(3333, () => console.log('Servidor rodando'));

@@ -41,7 +41,7 @@ export async function ensureAuthenticated(
       id: user_id,
     };
 
-    next();
+    return next();
   } catch (error) {
     throw new AppError('invalid token', 401);
   }

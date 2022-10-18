@@ -18,7 +18,7 @@
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsyringe": "^4.7.0",
-    "typeorm": "0.3.4",
+    "typeorm": "^0.3.10",
     "uuid": "^8.3.2",
     "yarn": "^1.22.18"
   },
@@ -26,7 +26,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "start": "tsc && node src/server.ts",
-    "test": "jest"
+    "test": "jest",
+    "seed:admin": "ts-node-dev -r tsconfig-paths/register src/shared/infra/typeorm/seed/admin.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
