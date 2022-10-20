@@ -3,7 +3,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
 
-import '@shared/infra/typeorm/data-source';
+import '@shared/infra/typeorm';
 import '@shared/container';
 import swaggerDocument from '../../../../swagger.json';
 import { AppError } from '@shared/errors/AppError';
@@ -32,6 +32,5 @@ app.use(
     });
   },
 );
-
 
 app.listen(3333, () => console.log('Servidor rodando'));

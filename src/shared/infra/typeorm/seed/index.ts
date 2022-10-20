@@ -1,7 +1,6 @@
 import 'reflect-metadata';
-import {   DataSource } from 'typeorm';
-import { createConnection } from '../data-source';
-
+import { DataSource } from 'typeorm';
+import { createConnection } from '..';
 
 export default async (): Promise<DataSource> => {
   const defaultOptions = await DataSource;
@@ -9,9 +8,9 @@ export default async (): Promise<DataSource> => {
   return createConnection(
     Object.assign(defaultOptions, {
       database:
-        process.env.NODE_ENV === "test"
-          ? "rentx_test"
+        process.env.NODE_ENV === 'test'
+          ? 'rentx_test'
           : defaultOptions.database,
-    })
+    }),
   );
 };
