@@ -3,12 +3,13 @@ import { getRepository, Repository } from 'typeorm';
 import { ICreateUserTokenDto } from '../../../dtos/ICreateUserTokenDTO';
 import { UserTokens } from '../entities/UsersToken';
 import { IUsersTokensRepository } from '../../../repositories/IUsersTokensRepository';
+import { dataSource } from '@shared/infra/typeorm';
 
 class UsersTokensRepository implements IUsersTokensRepository {
   private repository: Repository<UserTokens>;
 
   constructor() {
-    this.repository = getRepository(UserTokens);
+    this.repository = dataSource.getRepository(UserTokens);
   }
 
   async create({

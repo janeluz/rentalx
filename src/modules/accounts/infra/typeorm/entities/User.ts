@@ -21,9 +21,7 @@ class User {
   @Column()
   isAdmin: boolean;
 
-  @Column('varchar', { nullable: true })
-  avatar: string;
-
+ 
   @CreateDateColumn()
   created_at: Date;
 

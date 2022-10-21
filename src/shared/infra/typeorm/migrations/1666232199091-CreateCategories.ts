@@ -4,7 +4,7 @@ export class CreateCategories1666232199091 implements MigrationInterface {
 
     
     public async up(queryRunner: QueryRunner): Promise<void> {
-        // Criamos nossa tabela
+        // Cria a tabela
         await queryRunner.createTable(
             new Table({
                 name: 'categories',
@@ -32,7 +32,7 @@ export class CreateCategories1666232199091 implements MigrationInterface {
         );
     }
 
-    // Se algo der errado excluímos a tabela
+    // Se algo der errado exclui a tabela
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('categories');
     }

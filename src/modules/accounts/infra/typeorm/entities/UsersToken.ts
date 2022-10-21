@@ -25,6 +25,9 @@ class UserTokens {
   @JoinColumn({ name: 'user_id' })
   user: User;
 
+  @Column('varchar', { nullable: true })
+  avatar: string;
+
   @Column()
   expires_date: Date;
 
