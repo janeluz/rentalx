@@ -1,4 +1,4 @@
-import { getRepository, Repository } from 'typeorm';
+import {  Repository } from 'typeorm';
 
 // import { dataSource } from '../../../../../shared/infra/typeorm/data-source';
 import { Category } from '../entities/Category';
@@ -6,6 +6,7 @@ import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from '../../../repositories/ICategoriesRepository';
+import { dataSource } from '@shared/infra/typeorm';
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
@@ -13,7 +14,7 @@ class CategoriesRepository implements ICategoriesRepository {
   // private static INSTANCE: CategoriesRepository;
 
   constructor() {
-    this.repository = getRepository(Category); /***/
+    this.repository = dataSource.getRepository(Category); /***/
   }
 
   // public static getInstance(): CategoriesRepository {
@@ -36,7 +37,7 @@ class CategoriesRepository implements ICategoriesRepository {
   }
   async findByName(name: string): Promise<Category> {
     // select * from categories where = 'name' limit 1
-    const category = await this.repository.findOne({ name });
+    const category = await this.repository.findOneBy({ name });
     return category;
   }
 }

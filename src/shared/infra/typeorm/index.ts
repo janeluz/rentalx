@@ -6,15 +6,16 @@ import { DataSource } from 'typeorm';
 import { User } from '../../../modules/accounts/infra/typeorm/entities/User';
 import { Category } from '../../../modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '../../../modules/cars/infra/typeorm/entities/Specification';
-import { CreateSpecification1666232161094 } from './migrations/1666232161094-CreateSpecification';
-import { CreateCategories1666232199091 } from './migrations/1666232199091-CreateCategories';
-import { CreateUsersToken1666232386456 } from './migrations/1666232386456-CreateUsersToken';
 import { CreateRentals1666232441220 } from './migrations/1666232441220-CreateRentals';
 import { CreateCarImagens1666232493655 } from './migrations/1666232493655-CreateCarImagens';
 import { CreateSpecificationsCar1666232541466 } from './migrations/1666232541466-CreateSpecificationsCar';
-import { CreateCars1666232601509 } from './migrations/1666232601509-CreateCars';
-import { AlterTable1666314198810 } from './migrations/1666314198810-AlterTable';
-import { CreateUser1666319791532 } from './migrations/1666319791532-CreateUser';
+
+import { CreateCategory1666650496096 } from './migrations/1666650496096-CreateCategory';
+import { CreateSpecification1666653988999 } from './migrations/1666653988999-CreateSpecification';
+import { CreateCar1666654264524 } from './migrations/1666654264524-CreateCar';
+import { CreateUser1666655141471 } from './migrations/1666655141471-CreateUser';
+import { CreateUsersToken1666655169868 } from './migrations/1666655169868-CreateUsersToken';
+import { AlterTableUser1666655785784 } from './migrations/1666655785784-AlterTableUser';
 
 
 export const dataSource = new DataSource({
@@ -26,21 +27,22 @@ export const dataSource = new DataSource({
   database: 'rentalx',
   synchronize: true,
   logging: true,
-  entities: [Category, Specification, User,Car,UserTokens],
+  entities: [Category, Specification, User,UserTokens],
   // migrations: ['./src/shared/typeorm/migrations/*.ts']
   migrations: [
-    CreateCategories1666232199091,
-    CreateSpecification1666232161094,
-    CreateUser1666319791532,
-    AlterTable1666314198810,
+    CreateCategory1666650496096,
+    CreateSpecification1666653988999,
+    CreateUser1666655141471,
+    // CreateUsersToken1666655169868,
+    AlterTableUser1666655785784,
+    CreateCar1666654264524,
     // CreateUsersToken1666232386456,
     // CreateRentals1666232441220,
     // CreateCarImagens1666232493655,
     // CreateSpecificationsCar1666232541466,
-    CreateCars1666232601509
+   
   ],
-});
- 
+})
 export function createConnection(host = "localhost"): Promise<DataSource> {
   return dataSource.setOptions({ host }).initialize();
 }
