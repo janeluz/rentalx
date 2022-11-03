@@ -6,15 +6,10 @@ import { DataSource } from 'typeorm';
 import { User } from '../../../modules/accounts/infra/typeorm/entities/User';
 import { Category } from '../../../modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '../../../modules/cars/infra/typeorm/entities/Specification';
-import { CreateRentals1666232441220 } from './migrations/1666232441220-CreateRentals';
-import { CreateCarImagens1666232493655 } from './migrations/1666232493655-CreateCarImagens';
-import { CreateSpecificationsCar1666232541466 } from './migrations/1666232541466-CreateSpecificationsCar';
-
 import { CreateCategory1666650496096 } from './migrations/1666650496096-CreateCategory';
 import { CreateSpecification1666653988999 } from './migrations/1666653988999-CreateSpecification';
 import { CreateCar1666654264524 } from './migrations/1666654264524-CreateCar';
 import { CreateUser1666655141471 } from './migrations/1666655141471-CreateUser';
-import { CreateUsersToken1666655169868 } from './migrations/1666655169868-CreateUsersToken';
 import { AlterTableUser1666655785784 } from './migrations/1666655785784-AlterTableUser';
 
 
@@ -27,7 +22,7 @@ export const dataSource = new DataSource({
   database: 'rentalx',
   synchronize: true,
   logging: true,
-  entities: [Category, Specification, User,UserTokens],
+  entities: [Category, Specification, User,Car],
   // migrations: ['./src/shared/typeorm/migrations/*.ts']
   migrations: [
     CreateCategory1666650496096,

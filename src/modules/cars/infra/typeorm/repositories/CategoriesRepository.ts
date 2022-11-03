@@ -16,13 +16,7 @@ class CategoriesRepository implements ICategoriesRepository {
   constructor() {
     this.repository = dataSource.getRepository(Category); /***/
   }
-
-  // public static getInstance(): CategoriesRepository {
-  //   if (!CategoriesRepository.INSTANCE) {
-  //     CategoriesRepository.INSTANCE = new CategoriesRepository();
-  //   }
-  //   return CategoriesRepository.INSTANCE;
-  // }
+ 
   async create({ description, name }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({
       description,
