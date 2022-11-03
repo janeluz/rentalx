@@ -1,4 +1,4 @@
-import { getRepository, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 
 import { ICreateUserTokenDto } from '../../../dtos/ICreateUserTokenDTO';
 import { UserTokens } from '../entities/UsersToken';

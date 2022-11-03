@@ -10,28 +10,28 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { User } from './User';
 
-// @Entity('users_tokens')
+@Entity('users_tokens')
 class UserTokens {
-  // @PrimaryColumn()
+  @PrimaryColumn()
   id: string;
 
-  // @Column()
+  @Column()
   refresh_token: string;
 
-  // @Column()
+  @Column()
   user_id: string;
 
-  // // @ManyToOne(() => User)
-  // @JoinColumn({ name: 'user_id' })
-  // user: User;
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
-  // @Column('varchar', { nullable: true })
+  @Column('varchar', { nullable: true })
   avatar: string;
 
-  // @Column()
+  @Column()
   expires_date: Date;
 
-  // @CreateDateColumn()
+  @CreateDateColumn()
   created_at: Date;
 
   constructor() {

@@ -1,9 +1,10 @@
-import { ICreateUserDTO, IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
+import {
+  ICreateUserDTO,
+  IUsersRepository,
+} from '@modules/accounts/repositories/IUsersRepository';
 import { dataSource } from '@shared/infra/typeorm';
-import {  Repository } from 'typeorm';
-
-import { User } from '../entities/User';
-
+import { Repository } from 'typeorm';
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
 
 class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;

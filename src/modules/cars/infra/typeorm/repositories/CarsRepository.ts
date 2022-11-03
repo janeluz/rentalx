@@ -11,9 +11,9 @@ class CarsRepository implements ICarsRepository {
   constructor() {
     this.repository = dataSource.getRepository(Car);
   }
-   async findByLicensePlate(license_plate: string): Promise<Car> {
-    const car = await this.repository.findOne({
-      licence_plate,
+  async findByLicensePlate(license_plate: string): Promise<Car> {
+    const car = await this.repository.findOneBy({
+      license_plate,
     });
     return car;
   }
@@ -37,7 +37,7 @@ class CarsRepository implements ICarsRepository {
       category_id,
     });
     await this.repository.save(car);
-    
+
     return car;
   }
   async findAvailable(
