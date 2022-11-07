@@ -8,9 +8,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 121013
-      POSTGRES_DB: rentalx
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=121013
+      - POSTGRES_DB=rentalx
     volumes:
       - pgdata:/data/postgres
 
@@ -23,6 +23,7 @@ services:
       - 9229:9229
     volumes:
       - .:/usr/app
+     
     links:
       - database
     depends_on:
