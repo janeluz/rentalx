@@ -7,7 +7,6 @@ import { AppError } from '@shared/errors/AppError';
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 
 
-// import { IUsersTokensRepository } from '../../repositories/IUsersTokensRepository';
 
 interface IRequest {
   email: string;
