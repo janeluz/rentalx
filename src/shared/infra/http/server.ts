@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
-
+import { createConnection } from '@shared/infra/typeorm/index';
 import '@shared/infra/typeorm';
 import '@shared/container';
 import swaggerDocument from '../../../../swagger.json';
@@ -24,6 +24,7 @@ app.use(
         message: err.message,
       });
     }
+    
 
     // Se não, vamos retornar um Internal server error
     return response.status(500).json({

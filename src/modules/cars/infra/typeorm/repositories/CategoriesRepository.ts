@@ -1,12 +1,11 @@
-import {  Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 
-// import { dataSource } from '../../../../../shared/infra/typeorm/data-source';
 import { Category } from '../entities/Category';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from '../../../repositories/ICategoriesRepository';
-import { dataSource } from '@shared/infra/typeorm';
+import { AppDataSource } from '@shared/infra/typeorm';
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
@@ -14,9 +13,9 @@ class CategoriesRepository implements ICategoriesRepository {
   // private static INSTANCE: CategoriesRepository;
 
   constructor() {
-    this.repository = dataSource.getRepository(Category); /***/
+    this.repository = AppDataSource.getRepository(Category); /***/
   }
- 
+
   async create({ description, name }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({
       description,
