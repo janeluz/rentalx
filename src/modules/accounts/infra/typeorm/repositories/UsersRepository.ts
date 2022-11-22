@@ -2,7 +2,7 @@ import {
   ICreateUserDTO,
   IUsersRepository,
 } from '@modules/accounts/repositories/IUsersRepository';
-import { dataSource } from '@shared/infra/typeorm';
+import { AppDataSource } from '@shared/infra/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
 
@@ -10,7 +10,7 @@ class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;
 
   constructor() {
-    this.repository = dataSource.getRepository(User);
+    this.repository = AppDataSource.getRepository(User);
   }
 
   async create({

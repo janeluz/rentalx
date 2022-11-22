@@ -6,13 +6,13 @@ import {
   ISpecificationsRepository,
   ICreateSpecificationDTO,
 } from '../../../repositories/ISpecificationsRepository';
-import { dataSource } from '@shared/infra/typeorm';
+import { AppDataSource } from '@shared/infra/typeorm';
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>;
 
   constructor() {
-    this.repository = dataSource.getRepository(Specification);
+    this.repository = AppDataSource.getRepository(Specification);
   }
 
   async create({ description, name }: ICreateSpecificationDTO): Promise<void> {
