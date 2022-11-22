@@ -1,3 +1,4 @@
+
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
 export class CreateCategory1666650496096 implements MigrationInterface {

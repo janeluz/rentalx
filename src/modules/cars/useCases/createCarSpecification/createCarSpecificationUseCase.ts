@@ -8,7 +8,7 @@ interface IRequest{
 }
 class CreateCarSpecificationUseCase{
   constructor(
-    //@inject('CarsRepository')
+    @inject('CarsRepository')
     private carsRepository:ICarsRepository
   ){}
   async execute({car_id,specifications_id}: IRequest): Promise<void> {

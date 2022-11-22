@@ -8,6 +8,7 @@ import '@shared/container';
 import swaggerDocument from '../../../../swagger.json';
 import { AppError } from '@shared/errors/AppError';
 import { router } from './routes';
+import { createConnection } from '@shared/infra/typeorm';
 
 
 const app = express();
@@ -32,5 +33,7 @@ app.use(
     });
   },
 );
+
+
 
 app.listen(3333, () => console.log('Servidor rodando'));

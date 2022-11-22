@@ -1,8 +1,6 @@
-import { UserTokens } from '@modules/accounts/infra/typeorm/entities/UsersToken';
-import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import 'reflect-metadata';
+import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { DataSource } from 'typeorm';
-
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
@@ -20,7 +18,7 @@ export const dataSource = new DataSource({
   username: 'postgres',
   password: '121013',
   database: 'rentalx',
-  synchronize: true,
+  synchronize: false,
   logging: true,
   entities: [Category, Specification, User,Car],
   
@@ -39,7 +37,7 @@ export const dataSource = new DataSource({
    
   ],
 })
-export function createConnection(host = "localhost"): Promise<DataSource> {
-  return dataSource.setOptions({ host }).initialize();
+export function createConnection(host ="localhost"): Promise<DataSource> {
+  return dataSource.setOptions({ host}).initialize();
 }
 
