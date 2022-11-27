@@ -1,9 +1,5 @@
 import 'reflect-metadata';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
-<<<<<<< HEAD
-import { DataSource } from 'typeorm';
-=======
->>>>>>> 1f799a3a5e88f5e6b2e4d14918fdfba2a23f5b33
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
@@ -12,7 +8,9 @@ import { CreateSpecification1666653988999 } from '@shared/infra/typeorm/migratio
 import { CreateCar1666654264524 } from '@shared/infra/typeorm/migrations/1666654264524-CreateCar';
 import { CreateUser1666655141471 } from '@shared/infra/typeorm/migrations/1666655141471-CreateUser';
 import { AlterTableUser1666655785784 } from '@shared/infra/typeorm/migrations/1666655785784-AlterTableUser';
-import { DataSource } from 'typeorm/data-source';
+
+import { CreateRentals1666232441220 } from './migrations/1666232441220-CreateRentals';
+import { DataSource } from 'typeorm';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -26,6 +24,7 @@ export const AppDataSource = new DataSource({
   entities: [Category, Specification, User, Car],
 
   migrations: [
+    CreateRentals1666232441220,
     CreateCategory1666650496096,
     CreateSpecification1666653988999,
     CreateUser1666655141471,
@@ -37,15 +36,8 @@ export const AppDataSource = new DataSource({
     // // CreateCarImagens1666232493655,
     // // CreateSpecificationsCar1666232541466,
   ],
-<<<<<<< HEAD
-})
-export function createConnection(host ="localhost"): Promise<DataSource> {
-  return dataSource.setOptions({ host}).initialize();
-}
-=======
 });
->>>>>>> 1f799a3a5e88f5e6b2e4d14918fdfba2a23f5b33
 
 export function createConnection(host = 'localhost'): Promise<DataSource> {
-  return AppDataSource.setOptions({ host }).initialize();
+  return AppDataSource.setOptions( {host}).initialize();
 }
