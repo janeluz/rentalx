@@ -14,9 +14,7 @@ class CarsRepository implements ICarsRepository {
   findById(id: string): Promise<Car> {
     throw new Error('Method not implemented.');
   }
-  findById(id: string): Promise<Car> {
-    throw new Error('Method not implemented.');
-  }
+  
   async findByLicensePlate(license_plate: string): Promise<Car> {
     const car = await this.repository.findOneBy({
       license_plate,
