@@ -12,13 +12,14 @@ import { AlterTableUser1666655785784 } from '@shared/infra/typeorm/migrations/16
 import { CreateRentals1666232441220 } from './migrations/1666232441220-CreateRentals';
 import { DataSource } from 'typeorm';
 
+
 export const AppDataSource = new DataSource({
   type: 'postgres',
   host: 'localhost',
   port: 5432,
   username: 'postgres',
   password: '121013',
-  database: 'rentalx',
+  database: process.env.NODE_ENV === "test" ? "rentalx_test" : "rentalx",
   synchronize: false,
   logging: true,
   entities: [Category, Specification, User, Car],
@@ -39,5 +40,10 @@ export const AppDataSource = new DataSource({
 });
 
 export function createConnection(host = 'localhost'): Promise<DataSource> {
+ 
   return AppDataSource.setOptions( {host}).initialize();
+
+  
 }
+
+export default AppDataSource;
