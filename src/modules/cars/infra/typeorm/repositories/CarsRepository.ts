@@ -11,10 +11,13 @@ class CarsRepository implements ICarsRepository {
   constructor() {
     this.repository = AppDataSource.getRepository(Car);
   }
+  updateAvailable(id: string, available: boolean): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
   findById(id: string): Promise<Car> {
     throw new Error('Method not implemented.');
   }
-  
+
   async findByLicensePlate(license_plate: string): Promise<Car> {
     const car = await this.repository.findOneBy({
       license_plate,

@@ -10,12 +10,14 @@ import { AppError } from '@shared/errors/AppError';
 import { router } from './routes';
 
 
+createConnection();
+
 const app = express();
 
 app.use(express.json());
 app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(router);
-createConnection();
+
 // Se o erro for uma instância do AppError geramos um erro customizado
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
@@ -24,7 +26,6 @@ app.use(
         message: err.message,
       });
     }
-    
 
     // Se não, vamos retornar um Internal server error
     return response.status(500).json({
@@ -34,5 +35,4 @@ app.use(
   },
 );
 
-export {app};
-
+export { app };

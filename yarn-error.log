@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add cross-env
+  C:\Program Files\nodejs\node.exe C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add dayjs
 
 PATH: 
-  C:\Users\Diego\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Diego\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Java\zulu17.30.15-ca-jdk17.0.1-win_x64;C:\Python39\Scripts;C:\Python39;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;.;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Kubernetes\Minikube;C:\minikube;C:\Program Files\nodejs;C:\Program Files\Microsoft\Azure Functions Core Tools;C:\Program Files\dotnet;C:\Program Files\Docker\Docker\resources\bin;C:\Python39\Scripts;C:\Python39;C:\Users\Diego\AppData\Local\Microsoft\WindowsApps;C:\Users\Diego\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\zulu17.30.15-ca-jdk17.0.1-win_x64\bin;C:\Users\Diego\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\Diego\.dotnet\tools;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\Diego\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Diego\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Java\zulu17.30.15-ca-jdk17.0.1-win_x64;C:\Python39\Scripts;C:\Python39;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;.;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Kubernetes\Minikube;C:\minikube;C:\Program Files\nodejs;C:\Program Files\dotnet;C:\Program Files\Docker\Docker\resources\bin;C:\Python39\Scripts;C:\Python39;C:\Users\Diego\AppData\Local\Microsoft\WindowsApps;C:\Users\Diego\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\zulu17.30.15-ca-jdk17.0.1-win_x64\bin;C:\Users\Diego\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\Diego\.dotnet\tools;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.17
@@ -45,12 +45,12 @@ npm manifest:
       "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
       "start": "tsc && node src/server.ts",
-      "test": " cross-env NODE_ENV=test jest",
+      "test":  "set NODE_ENV=test&&jest --runInBand --detectOpenHandles",
       "seed:admin": "ts-node-dev -r tsconfig-paths/register src/shared/infra/typeorm/seed/admin.ts"
     },
     "devDependencies": {
       "@types/bcryptjs": "^2.4.2",
-      "@types/jest": "^29.1.0",
+      "@types/jest": "^29.2.4",
       "@types/jsonwebtoken": "^8.5.9",
       "@types/supertest": "^2.0.12",
       "@types/swagger-ui-express": "^4.1.3",
@@ -847,10 +847,10 @@ Lockfile:
     dependencies:
       "@types/istanbul-lib-report" "*"
   
-  "@types/jest@^29.1.0":
-    version "29.1.0"
-    resolved "https://registry.npmjs.org/@types/jest/-/jest-29.1.0.tgz"
-    integrity sha512-CqlKkMNaUhFSRvqVKniNhbcy9fc/Rj2cmFD5t8Jtu4HlHzSit27h7XKfP5kkxBeROQ8WAvQQmy93FIz9or8jKg==
+  "@types/jest@^29.2.4":
+    version "29.2.4"
+    resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.2.4.tgz#9c155c4b81c9570dbd183eb8604aa0ae80ba5a5b"
+    integrity sha512-PipFB04k2qTRPePduVLTRiPzQfvMeLwUN3Z21hsAKaB/W9IIzgB2pizCL466ftJlcyZqnHoC9ZHpxLGl3fS86A==
     dependencies:
       expect "^29.0.0"
       pretty-format "^29.0.0"

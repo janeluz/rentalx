@@ -1,9 +1,8 @@
-import { ICreateRentalDTO } from "@modules/rentals/dtos/IRentalsDto";
-import { AppDataSource } from "@shared/infra/typeorm/data-source";
-import {  Repository } from "typeorm";
-import { IRentalsRepository } from "../../repositories/IRentalsRepositories";
-import { Rental } from "../entities/Rental";
-
+import { ICreateRentalDTO } from '@modules/rentals/dtos/IRentalsDto';
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
+import { Repository } from 'typeorm';
+import { IRentalsRepository } from '../../repositories/IRentalsRepositories';
+import { Rental } from '../entities/Rental';
 
 class RentalsRepository implements IRentalsRepository {
   private repository: Repository<Rental>;
@@ -13,12 +12,12 @@ class RentalsRepository implements IRentalsRepository {
   }
 
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
-    const openByCar = await this.repository.findOneBy({ car_id});
+    const openByCar = await this.repository.findOneBy({ car_id });
     return openByCar;
   }
 
   async findOpenRentalByUser(user_id: string): Promise<Rental> {
-    const openByUser = await this.repository.findOneBy({user_id});
+    const openByUser = await this.repository.findOneBy({ user_id });
     return openByUser;
   }
 
@@ -43,8 +42,6 @@ class RentalsRepository implements IRentalsRepository {
 
     return rental;
   }
-
-  
 }
 
 export { RentalsRepository };

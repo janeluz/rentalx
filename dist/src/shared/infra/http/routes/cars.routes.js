@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.carsRoutes = void 0;
+var CreateCarController_1 = require("@modules/cars/useCases/createCar/CreateCarController");
+var ListCarsController_1 = require("@modules/cars/useCases/listAvailableCars/ListCarsController");
+var express_1 = require("express");
+var ensureAdmin_1 = require("../middlewares/ensureAdmin");
+var ensureAuthenticated_1 = require("../middlewares/ensureAuthenticated");
+var carsRoutes = (0, express_1.Router)();
+exports.carsRoutes = carsRoutes;
+var createCarController = new CreateCarController_1.CreateCarController();
+var listAvailableCarsController = new ListCarsController_1.ListAvailableCarsController();
+carsRoutes.post("/", ensureAuthenticated_1.ensureAuthenticated, ensureAdmin_1.ensureAdmin, createCarController.handle);
+carsRoutes.get("/available", listAvailableCarsController.handle);
