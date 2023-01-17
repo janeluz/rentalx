@@ -6,7 +6,7 @@ import {
   ISpecificationsRepository,
   ICreateSpecificationDTO,
 } from '../../../repositories/ISpecificationsRepository';
-import { AppDataSource } from '@shared/infra/typeorm/data-source';
+import { AppDataSource } from '@shared/infra/typeorm';
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>;

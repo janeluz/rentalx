@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import { createConnection } from '../data-source';
+import { createConnection } from '..';
 
 // export default async (): Promise<DataSource> => {
 //   const defaultOptions =  DataSource;

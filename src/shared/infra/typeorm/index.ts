@@ -19,23 +19,24 @@ export const AppDataSource = new DataSource({
   username: 'postgres',
   password: '121013',
   database: 'rentalx',
-  synchronize: false,
+  synchronize: true,
   logging: true,
-  entities: [Category, Specification, User, Car],
+  entities: ["src/modules/**/infra/typeorm/entities/*.ts"],
+  migrations:["src/shared/infra/typeorm/migrations/*.ts"]
 
-  migrations: [
-    CreateRentals1666232441220,
-    CreateCategory1666650496096,
-    CreateSpecification1666653988999,
-    CreateUser1666655141471,
-    // // CreateUsersToken1666655169868,
-    AlterTableUser1666655785784,
-    CreateCar1666654264524,
+  // migrations: [
+  //   CreateRentals1666232441220,
+  //   CreateCategory1666650496096,
+  //   CreateSpecification1666653988999,
+  //   CreateUser1666655141471,
+  //   // // CreateUsersToken1666655169868,
+  //   AlterTableUser1666655785784,
+  //   CreateCar1666654264524,
     // // CreateUsersToken1666232386456,
     // // CreateRentals1666232441220,
     // // CreateCarImagens1666232493655,
     // // CreateSpecificationsCar1666232541466,
-  ],
+//   ],
 });
 
 export function createConnection(host = 'localhost'): Promise<DataSource> {

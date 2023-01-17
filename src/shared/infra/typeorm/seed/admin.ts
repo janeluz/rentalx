@@ -1,7 +1,7 @@
 import { hash } from "bcryptjs";
 
 import { v4 as uuidV4} from "uuid";
-import { createConnection } from "../data-source";
+import { createConnection } from "..";
 // criamos um seed(um usuário criado manualmente comom administrador)
 
 async function create() {
