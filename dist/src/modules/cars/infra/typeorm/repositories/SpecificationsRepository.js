@@ -39,10 +39,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpecificationsRepository = void 0;
 // import { dataSource } from '../../../../../shared/infra/typeorm/data-source';
 var Specification_1 = require("../entities/Specification");
-var typeorm_1 = require("@shared/infra/typeorm");
+var data_source_1 = require("@shared/infra/typeorm/data-source");
 var SpecificationsRepository = /** @class */ (function () {
     function SpecificationsRepository() {
-        this.repository = typeorm_1.AppDataSource.getRepository(Specification_1.Specification);
+        this.repository = data_source_1.AppDataSource.getRepository(Specification_1.Specification);
     }
     SpecificationsRepository.prototype.create = function (_a) {
         var description = _a.description, name = _a.name;

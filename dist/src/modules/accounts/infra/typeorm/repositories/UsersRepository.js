@@ -37,14 +37,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersRepository = void 0;
-var typeorm_1 = require("@shared/infra/typeorm");
+var data_source_1 = require("@shared/infra/typeorm/data-source");
 var User_1 = require("@modules/accounts/infra/typeorm/entities/User");
 var UsersRepository = /** @class */ (function () {
     function UsersRepository() {
-        this.repository = typeorm_1.AppDataSource.getRepository(User_1.User);
+        this.repository = data_source_1.AppDataSource.getRepository(User_1.User);
     }
     UsersRepository.prototype.create = function (_a) {
-        var name = _a.name, email = _a.email, driver_license = _a.driver_license, isAdmin = _a.isAdmin, password = _a.password, avatar = _a.avatar, id = _a.id;
+        var name = _a.name, email = _a.email, driver_license = _a.driver_license, isAdmin = _a.isAdmin, password = _a.password;
         return __awaiter(this, void 0, void 0, function () {
             var user;
             return __generator(this, function (_b) {
@@ -56,8 +56,6 @@ var UsersRepository = /** @class */ (function () {
                             driver_license: driver_license,
                             isAdmin: isAdmin,
                             password: password,
-                            avatar: avatar,
-                            id: id,
                         });
                         return [4 /*yield*/, this.repository.save(user)];
                     case 1:

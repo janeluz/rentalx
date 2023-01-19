@@ -37,11 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RentalsRepository = void 0;
-var typeorm_1 = require("@shared/infra/typeorm");
+var data_source_1 = require("@shared/infra/typeorm/data-source");
 var Rental_1 = require("../entities/Rental");
 var RentalsRepository = /** @class */ (function () {
     function RentalsRepository() {
-        this.repository = typeorm_1.AppDataSource.getRepository(Rental_1.Rental);
+        this.repository = data_source_1.AppDataSource.getRepository(Rental_1.Rental);
     }
     RentalsRepository.prototype.findOpenRentalByCar = function (car_id) {
         return __awaiter(this, void 0, void 0, function () {

@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var bcryptjs_1 = require("bcryptjs");
 var uuid_1 = require("uuid");
-var __1 = require("..");
+var data_source_1 = require("../data-source");
 // criamos um seed(um usuário criado manualmente comom administrador)
 function create() {
     return __awaiter(this, void 0, void 0, function () {
@@ -46,7 +46,7 @@ function create() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    connection = (0, __1.createConnection)();
+                    connection = (0, data_source_1.createConnection)();
                     id = (0, uuid_1.v4)();
                     return [4 /*yield*/, (0, bcryptjs_1.hash)('admin', 8)];
                 case 1:

@@ -9,7 +9,7 @@ var multer_1 = __importDefault(require("multer"));
 var CreateCategoryController_1 = require("../../../../modules/cars/useCases/createCategory/CreateCategoryController");
 var ImportCategoryController_1 = require("../../../../modules/cars/useCases/importCategory/ImportCategoryController");
 var ListCategoriesController_1 = require("../../../../modules/cars/useCases/listCategories/ListCategoriesController");
-var ensureAdmin_1 = require("../middlewares/ensureAdmin");
+// import { ensureAdmin } from '../middlewares/ensureAdmin';
 var ensureAuthenticated_1 = require("../middlewares/ensureAuthenticated");
 var categoriesRoutes = (0, express_1.Router)();
 exports.categoriesRoutes = categoriesRoutes;
@@ -21,4 +21,4 @@ var importCategoryController = new ImportCategoryController_1.ImportCategoryCont
 var listCategoriesController = new ListCategoriesController_1.ListCategoriesController();
 categoriesRoutes.post('/', createCategoryController.handle);
 categoriesRoutes.get('/', listCategoriesController.handle);
-categoriesRoutes.post('/import', upload.single('file'), ensureAuthenticated_1.ensureAuthenticated, ensureAdmin_1.ensureAdmin, importCategoryController.handle);
+categoriesRoutes.post('/import', upload.single('file'), ensureAuthenticated_1.ensureAuthenticated, importCategoryController.handle);

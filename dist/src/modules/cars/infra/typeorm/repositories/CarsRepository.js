@@ -37,11 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CarsRepository = void 0;
-var typeorm_1 = require("@shared/infra/typeorm");
+var data_source_1 = require("@shared/infra/typeorm/data-source");
 var Car_1 = require("../entities/Car");
 var CarsRepository = /** @class */ (function () {
     function CarsRepository() {
-        this.repository = typeorm_1.AppDataSource.getRepository(Car_1.Car);
+        this.repository = data_source_1.AppDataSource.getRepository(Car_1.Car);
     }
     CarsRepository.prototype.updateAvailable = function (id, available) {
         throw new Error('Method not implemented.');

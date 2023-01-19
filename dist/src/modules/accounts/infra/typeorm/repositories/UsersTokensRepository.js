@@ -38,10 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersTokensRepository = void 0;
 var UsersToken_1 = require("../entities/UsersToken");
-var typeorm_1 = require("@shared/infra/typeorm");
+var data_source_1 = require("@shared/infra/typeorm/data-source");
 var UsersTokensRepository = /** @class */ (function () {
     function UsersTokensRepository() {
-        this.repository = typeorm_1.AppDataSource.getRepository(UsersToken_1.UserTokens);
+        this.repository = data_source_1.AppDataSource.getRepository(UsersToken_1.UserTokens);
     }
     UsersTokensRepository.prototype.create = function (_a) {
         var expires_date = _a.expires_date, refresh_token = _a.refresh_token, user_id = _a.user_id;

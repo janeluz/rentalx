@@ -5,7 +5,7 @@ import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from '../../../repositories/ICategoriesRepository';
-import { AppDataSource } from '@shared/infra/typeorm';
+import { AppDataSource } from '@shared/infra/typeorm/data-source';
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;

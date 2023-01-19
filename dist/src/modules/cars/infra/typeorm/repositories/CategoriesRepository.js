@@ -38,11 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategoriesRepository = void 0;
 var Category_1 = require("../entities/Category");
-var typeorm_1 = require("@shared/infra/typeorm");
+var data_source_1 = require("@shared/infra/typeorm/data-source");
 var CategoriesRepository = /** @class */ (function () {
     // private static INSTANCE: CategoriesRepository;
     function CategoriesRepository() {
-        this.repository = typeorm_1.AppDataSource.getRepository(Category_1.Category); /***/
+        this.repository = data_source_1.AppDataSource.getRepository(Category_1.Category); /***/
     }
     CategoriesRepository.prototype.create = function (_a) {
         var description = _a.description, name = _a.name;
