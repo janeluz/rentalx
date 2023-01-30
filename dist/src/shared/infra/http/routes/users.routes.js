@@ -9,9 +9,12 @@ var CreateUserController_1 = require("@modules/accounts/useCases/createUser/Crea
 // import { UpdateUserAvatarController } from '@modules/accounts/useCases/updateUserAvatar/UpdateUserAvatarController';
 var express_1 = require("express");
 var multer_1 = __importDefault(require("multer"));
+var ensureAuthenticated_1 = require("@shared/infra/http/middlewares/ensureAuthenticated");
+var UpdateUserAvatarController_1 = require("@modules/accounts/useCases/updateUserAvatar/UpdateUserAvatarController");
 var usersRoutes = (0, express_1.Router)();
 exports.usersRoutes = usersRoutes;
 var uploadAvatar = (0, multer_1.default)(uploadConfig_1.default);
 var createUserController = new CreateUserController_1.CreateUserController();
-// const updateUserAvatarController = new UpdateUserAvatarController();
+var updateUserAvatarController = new UpdateUserAvatarController_1.UpdateUserAvatarController();
 usersRoutes.post('/', createUserController.handle);
+usersRoutes.patch('/avatar', ensureAuthenticated_1.ensureAuthenticated, uploadAvatar.single('avatar'), updateUserAvatarController.handle);

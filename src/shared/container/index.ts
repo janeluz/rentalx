@@ -21,10 +21,10 @@ container.registerSingleton<ISpecificationsRepository>(
   SpecificationsRepository,
 );
 
-container.registerSingleton<ISpecificationsRepository>(
-  'SpecificationsRepository',
-  SpecificationsRepository,
-);
+// container.registerSingleton<ISpecificationsRepository>(
+//   'SpecificationsRepository',
+//   SpecificationsRepository,
+// );
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',

@@ -9,7 +9,10 @@ var RentalsRepository_1 = require("@modules/rentals/infra/typeorm/repositories/R
 // Passamos a interface
 tsyringe_1.container.registerSingleton('CategoriesRepository', CategoriesRepository_1.CategoriesRepository);
 tsyringe_1.container.registerSingleton('SpecificationsRepository', SpecificationsRepository_1.SpecificationsRepository);
-tsyringe_1.container.registerSingleton('SpecificationsRepository', SpecificationsRepository_1.SpecificationsRepository);
+// container.registerSingleton<ISpecificationsRepository>(
+//   'SpecificationsRepository',
+//   SpecificationsRepository,
+// );
 tsyringe_1.container.registerSingleton('UsersRepository', UsersRepository_1.UsersRepository);
 tsyringe_1.container.registerSingleton('CarsRepository', CarsRepository_1.CarsRepository);
 tsyringe_1.container.registerSingleton('RentalsRepository', RentalsRepository_1.RentalsRepository);

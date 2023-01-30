@@ -21,8 +21,12 @@ class User {
   @Column()
   isAdmin: boolean;
 
+  @Column()
+  avatar:string;
+  
   @CreateDateColumn()
   created_at: Date;
+  
 
   // @Expose({ name: 'avatar_url' })
   // avatar_url(): string {
