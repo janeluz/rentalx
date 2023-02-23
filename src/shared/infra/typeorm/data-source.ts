@@ -1,4 +1,5 @@
-import { DataSource } from "typeorm";
+import { DataSource } from "typeorm/data-source/DataSource";
+
 
 
 export const AppDataSource = new DataSource({
