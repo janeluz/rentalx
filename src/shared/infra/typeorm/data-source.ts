@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
     database: process.env.NODE_ENV ==='test'? 'rentalx_test' : 'rentalx',
     synchronize: true,
     logging: true,
-    entities:['src/modules/**/infra/typeorm/entities/*.ts'],
+    entities:['src/modules/infra/typeorm/entities/*.ts'],
     migrations:['src/shared/infra/typeorm/migrations/*.ts'],
 
     });
@@ -19,5 +19,3 @@ export const AppDataSource = new DataSource({
         host = process.env.NODE_ENV ==='test'? 'localhost':'database'):Promise<DataSource> {
             return AppDataSource.setOptions({host}).initialize()
         }
-    
-    export default AppDataSource;

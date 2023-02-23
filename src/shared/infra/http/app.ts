@@ -8,10 +8,11 @@ import '@shared/container';
 import swaggerDocument from '../../../../swagger.json';
 import { AppError } from '@shared/errors/AppError';
 import { router } from './routes';
-import { createConnection } from '../typeorm/data-source';
+import { AppDataSource, createConnection } from '../typeorm/data-source';
+
+// AppDataSource.initialize().then().catch((err) => console.log(err));
 
 createConnection();
-
 const app = express();
 
 app.use(express.json());
@@ -35,4 +36,8 @@ app.use(
   },
 );
 
+
+
 export { app };
+
+
