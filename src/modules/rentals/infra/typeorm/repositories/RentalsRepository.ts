@@ -10,9 +10,6 @@ class RentalsRepository implements IRentalsRepository {
   constructor() {
     this.repository = AppDataSource.getRepository(Rental);
   }
-  findById(id: string): unknown {
-    throw new Error('Method not implemented.');
-  }
 
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
     const openByCar = await this.repository.findOneBy({ car_id });
@@ -45,6 +42,16 @@ class RentalsRepository implements IRentalsRepository {
 
     return rental;
   }
+  async findByUser(user_id: string): Promise<Rental[]> {
+   const rentals = await this.repository.findOneBy({ user_id });
+
+  return rentals;
+  }
+  async findById(id: string): Promise<Rental> {
+    const rental = await this.repository.findOneBy({ id });
+    return rental;
+  }
+
 }
 
 export { RentalsRepository };
