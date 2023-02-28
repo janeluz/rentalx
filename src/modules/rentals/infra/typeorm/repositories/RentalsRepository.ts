@@ -10,6 +10,9 @@ class RentalsRepository implements IRentalsRepository {
   constructor() {
     this.repository = AppDataSource.getRepository(Rental);
   }
+  findById(id: string): unknown {
+    throw new Error('Method not implemented.');
+  }
 
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
     const openByCar = await this.repository.findOneBy({ car_id });

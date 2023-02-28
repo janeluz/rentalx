@@ -1,13 +1,13 @@
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { IRentalsRepository } from "@modules/rentals/infra/repositories/IRentalsRepositories";
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   id: string;
   user_id: string;
 }
-
+@injectable()
 class DevolutionRentalUseCase {
   dateProvider: any;
   constructor(
