@@ -4,9 +4,7 @@ import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
 
 class CarsRepositoryInMemory implements ICarsRepository {
-  updateAvailable(id: string, available: boolean): Promise<void> {
-    throw new Error('Method not implemented.');
-  }
+
   
   cars: Car[] = [];
 
@@ -59,7 +57,10 @@ class CarsRepositoryInMemory implements ICarsRepository {
   async findById(id: string): Promise<Car> {
       return this.cars.find(car => car.id === id);
   }
-
+  async updateAvailable(id: string, available: boolean): Promise<void> {
+    const findIndex = this.cars.findIndex((car) => car.id === id);
+    this.cars[findIndex].available = available as any
+  }
   
 }
 export { CarsRepositoryInMemory };
