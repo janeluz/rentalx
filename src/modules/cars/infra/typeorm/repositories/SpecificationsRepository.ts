@@ -15,20 +15,25 @@ class SpecificationsRepository implements ISpecificationsRepository {
     this.repository = AppDataSource.getRepository(Specification);
   }
 
-  async create({ description, name }: ICreateSpecificationDTO): Promise<void> {
+  async create({ description, name }: ICreateSpecificationDTO): Promise<Specification> {
     const specification = this.repository.create({
       description,
       name,
     });
-    await this.repository.save(specification);
-  }
 
+    await this.repository.save(specification);
+    return specification;
+      
+  }
   async findByName(name: string): Promise<Specification> {
-    const specification = this.repository.findOne({
+    const specification = await this.repository.findOneBy({
       name,
     });
     return specification;
   }
+
+  
 }
+
 
 export { SpecificationsRepository };

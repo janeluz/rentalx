@@ -10,6 +10,8 @@ import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/CarsRep
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
 import { RentalsRepository } from '@modules/rentals/infra/typeorm/repositories/RentalsRepository';
 import { IRentalsRepository } from '@modules/rentals/infra/repositories/IRentalsRepositories';
+import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
+import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 
 // Passamos a interface
 container.registerSingleton<ICategoriesRepository>(
@@ -26,9 +28,17 @@ container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
 );
-container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
+container.registerSingleton<ICarsRepository>(
+  'CarsRepository',
+   CarsRepository
+   );
 
 container.registerSingleton<IRentalsRepository>(
   'RentalsRepository',
   RentalsRepository,
+);
+
+container.registerSingleton<IUsersTokensRepository>(
+  'UsersTokensRepository',
+  UsersTokensRepository,
 );
