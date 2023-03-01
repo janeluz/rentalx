@@ -83,6 +83,11 @@
         "tags":["Category"],
         "summary":"Upload a new Category",
         "description": "upload a new category",
+        "security":[
+          {
+            "beareAuth":[]
+          }
+        ],
         "requestBody":{
           "content":{
            "multipart/form-data":{
@@ -135,6 +140,11 @@
         "tags":["Session"],
         "summary":"Authentication User",
         "description": "Authentication User",
+        "security":[
+          {
+            "beareAuth":[]
+          }
+        ],
         "requestBody":{
           "content":{
             "application/json":{
@@ -161,8 +171,37 @@
           }
         }
       }
-    }
-  },
+    },
+    "/cars":{
+      "post":{
+        "tags":["Cars"],
+        "summary":"Create a new  car",
+        "description": "Create a new car",
+        "security":[
+          {
+            "beareAuth":[]
+          }
+        ],
+         "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "$ref": "#/definitions/Car"
+                }
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Created"
+          },
+          "400":{
+            "description": " Car already exists!"
+          }
+        }
+      }
+    },
   "definitions": {
     "Specification":{
       "type":"object",
@@ -176,6 +215,35 @@
         }
       }
     },
+    "Car":{
+      "type":"object",
+        "properties":{
+          "name": {
+            "type":"string"
+          },
+          "description": {
+            "type":"string"
+          },
+          "daily_rate": {
+            "type":"number"
+          },
+          "available": {
+            "type":"boolean"
+          },
+          "license_plate": {
+            "type":"string"
+          },
+          "fine_amount": {
+            "type":"number"
+          },
+          "brand": {
+            "type":"string"
+          },
+          "category_id": {
+            "type":"string"
+          }
+        }
+      },
     "components": {
       "securitySchemes": {
         "beareAuth": {
