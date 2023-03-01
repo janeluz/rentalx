@@ -18,7 +18,7 @@ describe('Create Category', () => {
   it('should be  able to create a new category', async () => {
     const category = {
       name: 'Category Test',
-      description: ' Category description Test',
+      description: 'Category description Test',
     };
     await createCategoryUseCase.execute({
       name: category.name,
@@ -35,21 +35,19 @@ describe('Create Category', () => {
 
   // isso não deve ser capaz de criar uma categoria que já existe
   it('should  not be  able to create a new category with name exists', async () => {
-    expect(async () => {
-      const category = {
-        name: 'Category Test',
-        description: ' Category description Test',
-      };
-      // aqui vai salvar a categoria pq ela não existe
-      await createCategoryUseCase.execute({
+    const category = {
+      name: 'Category Test',
+      description: 'Category description Test',
+    };
+    // aqui vai salvar a categoria pq ela não existe
+    await createCategoryUseCase.execute({
+      name: category.name,
+      description: category.description,
+    });
+     await expect(createCategoryUseCase.execute({
         name: category.name,
         description: category.description,
-      });
-      // aqui vai dar o erro pq a categoria foi criada na função anterior
-      await createCategoryUseCase.execute({
-        name: category.name,
-        description: category.description,
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toEqual(new AppError('Category already exists!')); 
   });
 });

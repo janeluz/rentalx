@@ -1,13 +1,14 @@
 import { app } from '@shared/infra/http/app';
-import request from 'supertest';
-
 import { createConnection } from '@shared/infra/typeorm/data-source';
+import request from 'supertest';
+import {  DataSource } from 'typeorm';
 
+let connection: DataSource;
 
 
 describe('Create Category Controller', () => {
   beforeEach(async () => {
-    createConnetion = await createConnection();
+    connection = await createConnection();
   });
 
   it('should be able to create a new category', async () => {
