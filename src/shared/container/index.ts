@@ -12,6 +12,8 @@ import { RentalsRepository } from '@modules/rentals/infra/typeorm/repositories/R
 import { IRentalsRepository } from '@modules/rentals/infra/repositories/IRentalsRepositories';
 import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
 import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
+import { EtherealMailProvider } from './providers/MailProvider/implementations/EtherealMailProvider';
+import { IMailProvider } from './providers/MailProvider/IMailProvider';
 
 // Passamos a interface
 container.registerSingleton<ICategoriesRepository>(
@@ -42,3 +44,5 @@ container.registerSingleton<IUsersTokensRepository>(
   'UsersTokensRepository',
   UsersTokensRepository,
 );
+
+

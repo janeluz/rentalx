@@ -22,7 +22,7 @@ Deve ser posssível listar todos os carros disponíveis pelo nome da marca
 Deve ser posssível listar todos os carros disponíveis pelo nome do carro
 
 **RN**
-O usuário não precisa estar logado no sistema
+O usuário deve estar logado no sistema
 
 #Cadastro de Especificação no carro
 **RF**
@@ -57,3 +57,17 @@ Deves ser possível cadastrar um aluguel
 O aluguel deve ter duração mínima de 24 horas
 Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário
 Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro
+
+#Recuperar Senha
+
+**RF**
+-Deve ser possível o usuário recuperar a senha informando o e-mail
+- o Usuário deve receber um email com o paso a passo para a recuperação de senha
+- o usuário deve conseguir inserir uma nova senha
+
+
+**RN**
+- O usuário precisa informar uma nova senha 
+- o link  enviado para a recuperação deve expirar em 3 horas
+
+## ethereal usa o nodemail vamos usar pra enviar os e-mails criando uma conta fake 
