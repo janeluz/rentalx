@@ -71,3 +71,4 @@ Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para
 - o link  enviado para a recuperação deve expirar em 3 horas
 
 ## ethereal usa o nodemail vamos usar pra enviar os e-mails criando uma conta fake 
+## handlebars 
