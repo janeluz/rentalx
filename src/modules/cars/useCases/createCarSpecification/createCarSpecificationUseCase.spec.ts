@@ -13,6 +13,7 @@ describe('create Car Specification', () => {
     specificationsRepositoryInMemory = new SpecificationsRepositoryInMemory();
     createCarSpecificationUseCase = new CreateCarSpecificationUseCase(
       carsRepositoryInMemory,
+      specificationsRepositoryInMemory,
       
     );
   });
@@ -43,11 +44,10 @@ describe('create Car Specification', () => {
       name: 'test',
     });
 
-    const specifications_id = [specification.id];
-
+   
     const specificationsCars = await createCarSpecificationUseCase.execute({
       car_id: car.id,
-      specifications_id,
+      specifications_id: [specification.id],
 
   });
   expect(specificationsCars).toHaveProperty('specifications');
