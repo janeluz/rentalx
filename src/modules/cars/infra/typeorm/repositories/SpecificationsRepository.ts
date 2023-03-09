@@ -31,6 +31,10 @@ class SpecificationsRepository implements ISpecificationsRepository {
     });
     return specification;
   }
+  findByIds(specifications_id: string[]): Promise<Specification[]> {
+    throw new Error('Method not implemented.');
+  }
+
 
   
 }
