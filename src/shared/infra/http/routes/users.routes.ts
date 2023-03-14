@@ -5,7 +5,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import { ensureAuthenticated } from '@shared/infra/http/middlewares/ensureAuthenticated';
 import { UpdateUserAvatarController } from '@modules/accounts/useCases/updateUserAvatar/UpdateUserAvatarController';
-import { ProfileUserController } from '@modules/cars/useCases/profileUser/ProfileUserControll';
+import { ProfileUserController } from '@modules/accounts/useCases/profileUser/ProfileUserControll';
 
 
 const usersRoutes = Router();
