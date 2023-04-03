@@ -17,7 +17,7 @@ class UsersRepositoryInMemory implements IUsersRepository {
       email,
       name,
       password,
-    });
+    }); 
     this.users.push(user);
   }
 

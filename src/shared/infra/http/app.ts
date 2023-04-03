@@ -18,6 +18,7 @@ const app = express();
 
 app.use(express.json());
 app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/avatar', express.static(`${__dirname}/../../tmp/avatar`));
 app.use(router);
 
 // Se o erro for uma instância do AppError geramos um erro customizado

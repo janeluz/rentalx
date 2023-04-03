@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add class-transformer
+  C:\Program Files\nodejs\node.exe C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/classToClass
 
 PATH: 
   C:\Users\Diego\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Diego\bin;C:\Python311\Scripts;C:\Python311;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Java\zulu17.30.15-ca-jdk17.0.1-win_x64;C:\Python39\Scripts;C:\Python39;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;.;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Kubernetes\Minikube;C:\minikube;C:\Program Files\dotnet;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Microsoft\Azure Functions Core Tools;C:\Program Files\nodejs;C:\Python39\Scripts;C:\Python39;C:\Users\Diego\AppData\Local\Microsoft\WindowsApps;C:\Users\Diego\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\zulu17.30.15-ca-jdk17.0.1-win_x64\bin;C:\Program Files\heroku\bin;C:\Users\Diego\.dotnet\tools;C:\Users\Diego\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Diego\Desktop\rentalx\rentalx\node_modules\.bin\ts-node-dev'
+  Error: https://registry.yarnpkg.com/@types%2fclassToClass: Not found
+      at params.callback [as _callback] (C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67029:18)
+      at self.callback (C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (C:\Users\Diego\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
   {
@@ -28,6 +38,7 @@ npm manifest:
       "@types/nodemailer": "^6.4.7",
       "aws-sdk": "^2.1331.0",
       "bcryptjs": "^2.4.3",
+      "class-transformer": "^0.5.1",
       "csv-parse": "^5.1.0",
       "dayjs": "^1.11.7",
       "dotenv": "^16.0.3",
@@ -1502,6 +1513,11 @@ Lockfile:
     version "1.2.2"
     resolved "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz"
     integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
+  
+  class-transformer@^0.5.1:
+    version "0.5.1"
+    resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.5.1.tgz#24147d5dffd2a6cea930a3250a677addf96ab336"
+    integrity sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==
   
   cli-highlight@^2.1.11:
     version "2.1.11"
