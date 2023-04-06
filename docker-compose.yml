@@ -6,7 +6,7 @@ services:
     container_name: database_ignite
     restart: always
     ports:
-      - 5432:5432
+      - 68024:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=121013
@@ -20,7 +20,6 @@ services:
     restart: always
     ports:
       - 3000:3000
-      
     volumes:
       - .:/usr/app
      

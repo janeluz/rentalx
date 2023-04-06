@@ -4,14 +4,14 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
 
-import '@shared/infra/typeorm/data-source';
+import{createConnection} from '@shared/infra/typeorm/data-source';
 import '@shared/container';
-import swaggerDocument from '../../../../swagger.json';
 import { AppError } from '@shared/errors/AppError';
 import { router } from './routes';
-import { AppDataSource, createConnection } from '../typeorm/data-source';
+import swaggerDocument from '../../../../swagger.json';
 
-// AppDataSource.initialize().then().catch((err) => console.log(err));
+
+
 
 createConnection();
 const app = express();
